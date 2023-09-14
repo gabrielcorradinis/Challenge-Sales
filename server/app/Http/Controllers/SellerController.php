@@ -25,7 +25,7 @@ class SellerController extends Controller
             'email' => 'required',
         ]);
 
-        $data = $this->sellerService->storeSeller($request->toArray());
+        $data = $this->sellerService->storeSaleer($request->toArray());
 
         return response()->json(['message' => 'Seller created successfully', 'seller' => $data], 201);
 
@@ -34,7 +34,7 @@ class SellerController extends Controller
     public function list() 
     {
 
-        $sellers = $this->sellerService->listSellers();
+        $sellers = $this->sellerService->listSaleers();
 
         return response()->json(['sellers' => $sellers], 200);
         

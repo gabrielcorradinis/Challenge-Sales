@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sell;
+use App\Models\Sale;
 use App\Models\Seller;
-use App\Services\SellService;
+use App\Services\SaleService;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 
-class SellController extends Controller
+class SaleController extends Controller
 {
-    protected $sellService;
+    protected $saleService;
 
-    public function __construct(SellService $sellService)
+    public function __construct(SaleService $saleService)
     {
-        $this->sellService = $sellService;
+        $this->saleService = $saleService;
     }
     public function store(Request $request){
 
@@ -25,16 +25,16 @@ class SellController extends Controller
             'amount' => 'required'
         ]);
         
-        $data = $this->sellService->storeSell($request->toArray());
+        $data = $this->saleService->storeSale($request->toArray());
 
-        return response()->json(['message' => 'Sell created successfully', 'sell' => $data], 201);
+        return response()->json(['message' => 'Sale created successfully', 'Sale' => $data], 201);
         
     }
 
     public function listSales($sellerId)
     {
 
-        $sales = $this->sellService->listSell($sellerId);
+        $sales = $this->saleService->listSale($sellerId);
 
         return response()->json(['sales' => $sales], 200);
     }

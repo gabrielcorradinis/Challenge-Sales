@@ -16,17 +16,17 @@ class SellerService
         
     }
 
-    public function storeSeller(array $data): Seller 
+    public function storeSaleer(array $data): Seller 
     {
 
-        return $this->sellerRepository->storeSeller($data);
+        return $this->sellerRepository->storeSaleer($data);
 
     }
 
-    public function listSellers() 
+    public function listSaleers() 
     {
 
-        return $this->sellerRepository->listSellers();
+        return $this->sellerRepository->listSaleers();
 
     }
 

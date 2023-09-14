@@ -7,14 +7,14 @@ use App\Models\Seller;
 class SellerRepository
 {
 
-    public function storeSeller(array $data): Seller 
+    public function storeSaleer(array $data): Seller 
     {
 
         return Seller::create($data);
 
     }
 
-    public function listSellers() 
+    public function listSaleers() 
     {
 
         return Seller::withSum('sales', 'commission')->get();

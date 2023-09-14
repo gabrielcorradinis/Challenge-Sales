@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SellerController;
-use App\Http\Controllers\SellController;
+use App\Http\Controllers\SaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ Route::controller(SellerController::class)->prefix('seller')->group(function () 
     Route::get('/list', 'list');
 });
 
-Route::controller(SellController::class)->prefix('sales')->group(function () {
-    Route::post('/new-sell', 'store');
+Route::controller(SaleController::class)->prefix('sales')->group(function () {
+    Route::post('/new-Sale', 'store');
     Route::get('/{sellerId}', 'listSales');
 });
