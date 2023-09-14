@@ -20,8 +20,6 @@ class SaleController extends Controller
 
         $this->validate($request, [
             'seller_id' => 'required',
-            'name' => 'required',
-            'email' => 'required',
             'amount' => 'required'
         ]);
         

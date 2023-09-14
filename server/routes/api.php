@@ -22,6 +22,6 @@ Route::controller(SellerController::class)->prefix('seller')->group(function () 
 });
 
 Route::controller(SaleController::class)->prefix('sales')->group(function () {
-    Route::post('/new-Sale', 'store');
+    Route::post('/new-sale', 'store');
     Route::get('/{sellerId}', 'listSales');
 });
