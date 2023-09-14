@@ -3,12 +3,12 @@
     <v-form @submit.prevent>
         <v-container>
             <v-row>
-                <v-col cols="12" md="4">
-                    <v-select v-model="selectedSeller" :items="sellers" item-title="name" item-value="id" label="Saller"></v-select>
+                <v-col cols="12" md="6">
+                    <v-select v-model="selectedSeller" :items="sellers" item-title="name" item-value="id" label="Saller" :rules="[v => !!v || 'Seller is required']"    ></v-select>
                 </v-col>
 
-                <v-col cols="12" md="4">
-                    <v-btn type="submit" block class="mt-2" @click="listSales()">Submit</v-btn>
+                <v-col cols="12" md="6">
+                    <v-btn type="submit" block width="100%" height="56px" @click="listSales()">Submit</v-btn>
                 </v-col>
             </v-row>
         </v-container>
@@ -42,9 +42,9 @@
                 <td>{{ sale.id }}</td>
                 <td>{{ sales.name }}</td>
                 <td>{{ sales.email }}</td>
-                <td>{{ sale.commission }}</td>
-                <td>{{ sale.amount }}</td>
-                <td>{{ sale.created_at }}</td>
+                <td>R$ {{ sale.commission }}</td>
+                <td>R$ {{ sale.amount }}</td>
+                <td>{{ formattedDate }}</td>
             </tr>
         </tbody>
     </v-table>
@@ -53,6 +53,7 @@
 
 <script>
 import axios from "axios"
+import moment from 'moment';
 
 export default {
     name: 'NewSeller',
@@ -60,8 +61,13 @@ export default {
         return {
             sales: [],
             sellers: [],
-            selectedSeller: '',
+            selectedSeller: null,
         };
+    },
+    computed: {
+        formattedDate() {
+            return moment(this.sales.created_at).format('DD/MM/YYYY');
+        },
     },
     mounted() {
         this.listSeller();
@@ -85,7 +91,7 @@ export default {
                 .catch(error => {
                     console.log(error);
                 })
-        }
+        },
     },
 };
 </script>

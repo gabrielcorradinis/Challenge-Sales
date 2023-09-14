@@ -25,7 +25,7 @@
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.email }}</td>
-        <td>{{ item.commission }}</td>
+        <td>R$ {{ item.sales_sum_commission || `0.00`}}</td>
       </tr>
     </tbody>
   </v-table>
@@ -50,6 +50,7 @@ export default {
       axios.get('http://localhost:8384/api/seller/list')
         .then(response => {
           this.sellers = response.data.sellers;
+          console.log(response.data.sellers);
         })
         .catch(error => {
           console.log(error);
