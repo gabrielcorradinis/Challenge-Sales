@@ -50,10 +50,9 @@ export default {
       axios.get('http://localhost:8384/api/seller/list')
         .then(response => {
           this.sellers = response.data.sellers;
-          console.log(response.data.sellers);
         })
         .catch(error => {
-          console.log(error);
+          // console.log(error);
         })
     }
   },

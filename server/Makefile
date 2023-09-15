@@ -41,3 +41,6 @@ admin:
 
 tinker:
 	@docker exec -it php bash -c "while true; do php artisan tinker; done"
+	
+email:
+	@docker exec php php artisan send:daily-sales	

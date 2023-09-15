@@ -27,10 +27,10 @@
                     Email
                 </th>
                 <th class="text-left">
-                    Commission
+                    Amount
                 </th>
                 <th class="text-left">
-                    Amount
+                    Commission
                 </th>
                 <th class="text-left">
                     Date of sale
@@ -42,8 +42,8 @@
                 <td>{{ sale.id }}</td>
                 <td>{{ sales.name }}</td>
                 <td>{{ sales.email }}</td>
-                <td>R$ {{ sale.commission }}</td>
                 <td>R$ {{ sale.amount }}</td>
+                <td>R$ {{ sale.commission }}</td>
                 <td>{{ formattedDate }}</td>
             </tr>
         </tbody>
@@ -79,7 +79,7 @@ export default {
                     this.sellers = response.data.sellers;
                 })
                 .catch(error => {
-                    console.log(error);
+                    // console.log(error);
                 })
         },
         listSales() {
@@ -89,7 +89,7 @@ export default {
                     this.sales = response.data.sales;
                 })
                 .catch(error => {
-                    console.log(error);
+                    // console.log(error);
                 })
         },
     },

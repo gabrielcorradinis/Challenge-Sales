@@ -44,5 +44,13 @@ services:
     volumes:
       - ../client/:/home/node/app
 
+  mailpit:
+    image: axllent/mailpit
+    restart: always
+    container_name: mailpit
+    ports:
+      - '8025:8025'
+      - '1025:1025'
+
 volumes:
   mydb:

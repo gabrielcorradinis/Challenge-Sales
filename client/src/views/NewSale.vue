@@ -83,7 +83,6 @@ export default {
                     },3000);
                 })
                 .catch(error => {
-                    console.log(error);
                     this.formFail = true;
                     setTimeout(() => {
                         this.formFail = false;
@@ -93,12 +92,7 @@ export default {
         getSellers() {
           axios.get('http://localhost:8384/api/seller/list')
                 .then(response => {
-                    // this.sellers = response.data.sellers.map(seller => ({
-                    //   id: seller.id,
-                    //   name: seller.name 
-                    // }));
                     this.sellers = response.data.sellers;
-                    console.log(this.sellers);
                 })
                 .catch(error => {
                     // console.log(error);
