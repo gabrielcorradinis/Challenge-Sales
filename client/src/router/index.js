@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
+    redirect: '/home',
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
