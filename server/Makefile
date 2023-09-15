@@ -41,6 +41,10 @@ admin:
 
 tinker:
 	@docker exec -it php bash -c "while true; do php artisan tinker; done"
-	
-email:
-	@docker exec php php artisan send:daily-sales	
+
+init: 
+	@docker-compose -f ../docker/docker-compose.yml -p challenge up -d
+	@docker exec -u 1000 php composer install
+	@docker exec php php artisan key:generate
+	@docker exec php chown -cR 1000:33 ./bootstrap/cache/ ./storage/
+	@docker exec php chmod -cR 775 ./bootstrap/cache/ ./storage/

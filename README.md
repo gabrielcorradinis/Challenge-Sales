@@ -14,9 +14,7 @@ Projeto para gerenciamento de vendedores e vendas e envio de e-mails com relató
   - Dados do seu Banco de dados (Password Default caso conecte-se ao Docker do Projeto).
 - Para concluir a instalação, utilize os seguintes comandos via terminal:
   - Acesse a pasta `server/`
-  - `make up` para subir o container do Docker.
-  - `make install` para instalar as dependencias no container.
-  - `make permissions` para dar as devidas permissões.
+  - `make init` para subir o container do Docker, instalar as dependencias no container e dar as devidas permissões.
   - `make migrate` para criar a tabela na db.
 - Para acessar na Web, utilize o link `localhost:3000`.
  
