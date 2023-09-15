@@ -1,4 +1,4 @@
-<?
+<?php
 
 namespace App\Services;
 
@@ -16,10 +16,10 @@ class SellerService
         
     }
 
-    public function storeSaleer(array $data): Seller 
+    public function storeSaller(array $data): Seller 
     {
 
-        return $this->sellerRepository->storeSaleer($data);
+        return $this->sellerRepository->storeSaller($data);
 
     }
 
