@@ -9,10 +9,7 @@ Projeto para gerenciamento de vendedores e vendas e envio de e-mails com relató
 ## Para instalar e utilizar o projeto, siga estas etapas:
 
 - Clone do projeto em uma pasta.
-- Copiar o arquivo arquivo '.env.example' e renomear um para '.env'.
-- Popular com as credenciais no .env, sendo elas: 
-  - Dados do seu Banco de dados (Password Default caso conecte-se ao Docker do Projeto).
-- Para concluir a instalação, utilize os seguintes comandos via terminal:
+- Para realizar a instalação, utilize os seguintes comandos via terminal:
   - Acesse a pasta `server/`
   - `make init` para subir o container do Docker, instalar as dependencias no container e dar as devidas permissões.
   - `make migrate` para criar a tabela na db.

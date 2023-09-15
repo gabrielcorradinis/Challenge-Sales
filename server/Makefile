@@ -44,6 +44,7 @@ tinker:
 
 init: 
 	@docker-compose -f ../docker/docker-compose.yml -p challenge up -d
+	@docker exec php cp .env.example .env
 	@docker exec -u 1000 php composer install
 	@docker exec php php artisan key:generate
 	@docker exec php chown -cR 1000:33 ./bootstrap/cache/ ./storage/
