@@ -18,10 +18,10 @@ use App\Http\Controllers\SaleController;
 
 Route::controller(SellerController::class)->prefix('seller')->group(function () {
     Route::post('/create', 'store');
-    Route::get('/list', 'list');
+    Route::get('/list', 'index');
 });
 
 Route::controller(SaleController::class)->prefix('sales')->group(function () {
     Route::post('/new-sale', 'store');
-    Route::get('/{sellerId}', 'listSales');
+    Route::get('/{sellerId}', 'show');
 });

@@ -4,8 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNameEmailToSellersTable extends Migration
-{
+class CreateSellersTable extends Migration
+{   
     /**
      * Run the migrations.
      *
@@ -16,7 +16,7 @@ class AddNameEmailToSellersTable extends Migration
         Schema::create('sellers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }
@@ -28,8 +28,6 @@ class AddNameEmailToSellersTable extends Migration
      */
     public function down()
     {
-        // Schema::table('sellers', function (Blueprint $table) {
-        //     //
-        // });
+        Schema::dropIfExists('sellers');
     }
 }

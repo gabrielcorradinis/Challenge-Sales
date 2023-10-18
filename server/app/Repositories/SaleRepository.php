@@ -7,14 +7,26 @@ use App\Models\Seller;
 class SaleRepository
 {
 
-    public function storeSale(array $data): Sale 
+    /**
+     * Store a new sale.
+     *
+     * @param array $data
+     * @return Sale
+     */
+    public function store(array $data): Sale 
     {
 
         return Sale::create($data);
 
     }
 
-    public function listSale(int $sellerId) 
+    /**
+     * Get sales for a specific seller.
+     *
+     * @param int $sellerId
+     * @return Seller
+     */
+    public function show(int $sellerId) 
     {
 
         return Seller::with('sales')->FindOrFail($sellerId);

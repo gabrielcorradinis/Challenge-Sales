@@ -2,11 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
+    use HasFactory;
+
+    protected $factory = SaleFactory::class;
+
     protected $table = 'sales';
+
     protected $fillable = [
         'seller_id',
         'amount',

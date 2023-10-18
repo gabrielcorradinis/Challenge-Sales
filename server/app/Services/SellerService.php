@@ -16,17 +16,28 @@ class SellerService
         
     }
 
-    public function storeSaller(array $data): Seller 
+    /**
+     * Store a new seller.
+     *
+     * @param array $data
+     * @return Seller
+     */
+    public function store(array $data): Seller 
     {
 
-        return $this->sellerRepository->storeSaller($data);
+        return $this->sellerRepository->store($data);
 
     }
-
-    public function listSaleers() 
+    
+    /**
+     * Get a list of sellers with sales commission sum.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function index() 
     {
 
-        return $this->sellerRepository->listSaleers();
+        return $this->sellerRepository->index();
 
     }
 
